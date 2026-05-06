@@ -1,0 +1,44 @@
+[rocm_compat] Patched torchvision.ops.nms with CPU fallback for GPU tensors.
+
+============================================================
+  Evaluating: yolov8m
+  Weights   : runs/compare/yolov8m/weights/best.pt
+  GT filter : keep class ids [4]
+============================================================
+
+  Images evaluated : 5758
+  GT boxes total   : 951
+  TP=380  FP=172  FN=571
+  Precision : 0.6884
+  Recall    : 0.3996
+  F1        : 0.5057
+  mAP50     : 0.3417
+
+  Failure images → failures/yolov8m/fp  and  failures/yolov8m/fn
+
+============================================================
+  Evaluating: rtdetr-l
+  Weights   : runs/compare/rtdetr-l/weights/best.pt
+  GT filter : keep class ids [4]
+============================================================
+
+  Images evaluated : 5758
+  GT boxes total   : 951
+  TP=528  FP=842  FN=423
+  Precision : 0.3854
+  Recall    : 0.5552
+  F1        : 0.4550
+  mAP50     : 0.4269
+
+  Failure images → failures/rtdetr-l/fp  and  failures/rtdetr-l/fn
+
+======================================================================
+  FINAL COMPARISON
+======================================================================
+  Model              TP     FP     FN     Prec   Recall       F1    mAP50
+  ------------------------------------------------------------------
+  yolov8m           380    172    571   0.6884   0.3996   0.5057   0.3417
+  rtdetr-l          528    842    423   0.3854   0.5552   0.4550   0.4269
+======================================================================
+
+    rtdetr-l wins on mAP50 (+0.0852 over yolov8m)

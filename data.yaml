@@ -1,0 +1,7 @@
+path: rdd_and_normal_vs_potholes
+
+train: train/images
+val: val/images
+
+nc: 1
+names: ["pothole"]
